@@ -1,3 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-color-title {
+  color: #434EAB;
+}
+
+.bg-btn      {
+  background-color: #2E3789;
+}
+
+.border-btn {
+  border-color: #5C68CD;
+
+}
+
+.size-background-blue{
+  width:446px;
+}
+
+hr.new1 {
+  border-top: 1px solid red;
+}
+
+.cat-background{
+  position: absolute;
+  left:0;
+  bottom:0;
+
+}
+.arrow-right-bacground{
+  position: absolute;
+  right:50%;
+  bottom:20%;
+
+}
+
+.chat{
+  position:absolute;
+  right:25%;
+  bottom:30%
+}
+
+.arrow-top{
+  position:absolute;
+  right:20%;
+  bottom:35%
+}
+
+.font-chat{
+  position: absolute;
+  right:0%;
+  bottom:25%;
+}
+.size{
+  max-width: 588px;
+}
+
+.image-container {
+  width: 100%;
+
+  > div {
+    position: unset !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+}
+
+/* .bg-footer{
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:bottom;
+  } */
+
+
+/* 
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -104,4 +187,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
