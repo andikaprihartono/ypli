@@ -1,33 +1,48 @@
 import React from "react";
 import Link from "next/link";
 import Lock from "../public/components/lock.png";
+import Back from "../public/components/back.png"
 import Image from 'next/image';
-export default function newpass() {
-  return (
-    <>
-     <div className="size m-auto">
-                      <div class="w-full flex flex-col p-4 items-center justify-center">
+import Layout from '../widget/layout';
+
+export default function newpassword(){
+    return(
+        <>
+
+        <Layout>
+        <Link href="/login">
+<div class="top-0 left-0 md:hidden w-full flex">
+<Image
+src={Back} 
+  width={32}
+  height={32}
+/>
+<span className="font-bold text-base my-auto ml-2 text-color-title">Kembali Login</span>
+</div>
+</Link>
+      
+                      <div class="w-full mt-11 mb-5 flex flex-col p-4 items-center justify-center">
                      <Image src={Lock} alt="Logo Pic" />
-                        <p class="font-bold text-4xl text-color-title text-center">
-                        Create Your Account
+                        <p class="font-bold text-2xl text-color-title text-center">
+                        Buat Password Baru
                         </p>
                         <p class="font-normal text-base text-center">
-                        Pastikan informasi yang anda berikan benar, agar kami mudah menginformasikan anda.
+                        Pastikan password yang anda buat tidak sama seperti sebelumnya 
                         </p>
                       </div>
-                      <Formpass />
+                  
                       
-                    </div>
-      <div classname="p-4 w-full  ">
+                   
+  <div classname="p-4 w-full  ">
         <form class="flex flex-col w-full px-4">
-          <div class="mb-4">
+          <div class="mb-5">
             <div>
               <label class="font-bold text-base mb-5" for="">
                 Password
               </label>
               <div class="relative">
                 <input
-                  className=" w-full rounded-3xl border py-4 px-6 mb-2"
+                  className=" w-full rounded-xl border py-4 px-6 mb-2"
                   placeholder="Password"
                 />
                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center   ">
@@ -75,7 +90,7 @@ export default function newpass() {
                 </div>
               </div>
             </div>
-            <div className="grid gap-4 grid-cols-2 mb-10">
+            <div className="grid gap-4 grid-cols-2 ">
               <div className="flex ">
                 <svg
                   class="w-3 h-3 mr-2.5"
@@ -134,13 +149,13 @@ export default function newpass() {
               </div>
             </div>
           </div>
-          <div>
+          <div class="mb-5">
           <label class="font-bold text-base mb-5" for="">
                Konfirmn Password
               </label>
               <div class="relative">
                 <input
-                  className=" w-full rounded-3xl border py-4 px-6 mb-2"
+                  className=" w-full rounded-xl border py-4 px-6 mb-2"
                   placeholder="Password"
                 />
                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center   ">
@@ -194,6 +209,7 @@ export default function newpass() {
           </button>
         </form>
       </div>
-    </>
-  );
+      </Layout>
+        </>
+    )
 }

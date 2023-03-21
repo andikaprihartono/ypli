@@ -1,40 +1,30 @@
 import React from "react";
-import Header from "../login/header";
-import Form from "../login/form";
-import Regist from "./register";
-import BackgroundLogin from "../login/backgroundside";
-import Footer from "../login/footer";
-import LogoPic from "../../public/components/logo.png";
-import BgMobile from "../../public/components/mobile.png";
-import Background from "../../public/components/desktop.png";
-import Ig from "../../public/components/ig.png";
-import Email from "../../public/components/email.png";
-import Wa from "../../public/components/wa.png";
+import Ig from "../public/components/ig.png";
+import Email from "../public/components/email.png";
+import Wa from "../public/components/wa.png";
 import Image from "next/image";
-import Cat from "../../public/components/cat.png";
-import Near from "../../public/components/near.png";
-import Chat from "../../public/components/chat.png";
-import Toparrow from "../../public/components/atas.png";
+import Cat from "../public/components/cat.png";
+import Near from "../public/components/near.png";
+import Chat from "../public/components/chat.png";
+import Toparrow from "../public/components/atas.png";
 
-export default function login() {
-  return (
-    <>
+export default function layout(props){
+    return(
+        <>
+           
       <div>
         <div className="w-full h-full ">
           <div className=" flex h-full flex-wrap items-center justify-center ">
             <div className="w-full h-full">
               <div className="bg-white ">
                 <div className="w-full h-screen m-auto lg:flex lg:flex-wrap">
-                  <div className="px-4 m-auto lg:w-6/12">
+                  <div className="p-4  m-auto lg:w-6/12">
                    <div className="size m-auto">
-                     
-                      <Form />
-
+                   {props.children}
                     </div> 
-
-
-
-                  </div>
+                
+      
+                 </div>
                   <div
                     className="relative bottom-0 hidden lg:block flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
                     style={{
@@ -47,9 +37,9 @@ export default function login() {
                       Contact Information
                       </p>
                       <p className="text-lg text-center font-normal mb-6">
-                      If you have problem with LOGIN or have any question, 
-please contact us.
+                      If you have problem with LOGIN or have any question,please contact us.
                       </p>
+                     
                       <div className="grid gap-4 grid-cols-3 place-content-center ">
                           <div className="mx-auto">
                             <Image src={Ig} alt="Picture ig" width={52} height={52} />
@@ -101,12 +91,7 @@ please contact us.
                      />
                     </div>      
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className=" bottom-0 lg:hidden flex mx-auto items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
+                  <div className=" fixed inset-x-0 bottom-0 lg:hidden flex mx-auto items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
           style={{
             background:
               "linear-gradient(90deg, #434EAB 0%, #7A85EF 100%, #7A85EF 100%)",
@@ -120,7 +105,7 @@ please contact us.
               If you have problem with LOGIN or have any question, please
               contact us.
             </p>
-            <div className="grid gap-4 grid-cols-3 ">
+            <div className="grid gap-4 grid-cols-3 mx-auto">
               <div>
                 <Image src={Ig} alt="Picture ig" width={52} height={52} />
               </div>
@@ -136,7 +121,15 @@ please contact us.
 
         
         </div>
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
       </div>
     </>
-  );
+        
+    )
 }

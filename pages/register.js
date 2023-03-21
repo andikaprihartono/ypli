@@ -1,33 +1,90 @@
 import React from "react";
 import Link from "next/link";
-import Lock from "../public/components/lock.png";
+import LogoPic from "../public/components/logo.png";
 import Image from 'next/image';
-export default function newpass() {
+
+import Layout from '../widget/layout';
+
+export default function register(){
   return (
     <>
-     <div className="size m-auto">
-                      <div class="w-full flex flex-col p-4 items-center justify-center">
-                     <Image src={Lock} alt="Logo Pic" />
-                        <p class="font-bold text-4xl text-color-title text-center">
+    <Layout>
+    <div class="w-full flex flex-col p-4 items-center justify-center">
+                        <Image src={LogoPic} alt="Logo Pic" />
+                        <p class="mt-5 font-bold text-2xl text-color-title text-center">
                         Create Your Account
                         </p>
-                        <p class="font-normal text-base text-center">
+                        <p class="font-normal text-base text-center mt-2">
                         Pastikan informasi yang anda berikan benar, agar kami mudah menginformasikan anda.
                         </p>
-                      </div>
-                      <Formpass />
-                      
-                    </div>
+                      </div>    
       <div classname="p-4 w-full  ">
         <form class="flex flex-col w-full px-4">
-          <div class="mb-4">
-            <div>
+          <div class="mb-5">
+            <label class="font-bold text-base mb-2" for="">
+              Your Name
+            </label>
+            <input
+              className="w-full rounded-xl border py-4 px-6 "
+              placeholder="Your Name"
+            />
+          </div>
+
+          <div class="mb-5">
+            <label class="font-bold text-base mb-2" for="">
+              Email
+            </label>
+            <input
+              className="w-full rounded-xl border py-4 px-6 "
+              placeholder="yourmail@mail.com"
+            />
+          </div>
+
+          <div class="mb-5">
+            <label class="font-bold text-base mb-2" for="">
+              Gender
+            </label>
+            <div className="flex">
+              <div className="flex items-center mr-4">
+                <input
+                  id="gender-male"
+                  type="radio"
+                  defaultValue
+                  name="inline-radio-group"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  htmlFor="gender-male"
+                  className="ml-2 text-base font-normal "
+                >
+                  Laki - laki
+                </label>
+              </div>
+              <div className="flex items-center mr-4">
+                <input
+                  id="gender-female"
+                  type="radio"
+                  defaultValue
+                  name="inline-radio-group"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  htmlFor="gender-female"
+                  className="ml-2 text-base font-normal "
+                >
+                  Perempuan
+                </label>
+              </div>
+            </div>         
+          </div>
+<div className="mb-5">
+<div >
               <label class="font-bold text-base mb-5" for="">
                 Password
               </label>
               <div class="relative">
                 <input
-                  className=" w-full rounded-3xl border py-4 px-6 mb-2"
+                  className=" w-full rounded-xl border py-4 px-6 mb-2"
                   placeholder="Password"
                 />
                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center   ">
@@ -75,7 +132,7 @@ export default function newpass() {
                 </div>
               </div>
             </div>
-            <div className="grid gap-4 grid-cols-2 mb-10">
+            <div className="grid gap-4 grid-cols-2 ">
               <div className="flex ">
                 <svg
                   class="w-3 h-3 mr-2.5"
@@ -133,14 +190,15 @@ export default function newpass() {
                 <span class="text-sm font-normal">Satu angka</span>
               </div>
             </div>
-          </div>
-          <div>
-          <label class="font-bold text-base mb-5" for="">
-               Konfirmn Password
+</div>
+
+<div className="mb-5">
+              <label class="font-bold text-base mb-5" for="">
+                Confirm Password
               </label>
               <div class="relative">
                 <input
-                  className=" w-full rounded-3xl border py-4 px-6 mb-2"
+                  className=" w-full rounded-xl border py-4 px-6 mb-2"
                   placeholder="Password"
                 />
                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center   ">
@@ -187,13 +245,27 @@ export default function newpass() {
                   </svg>
                 </div>
               </div>
-          </div>
-
-          <button class="w-full text-base rounded-xl font-bold text-white text-center py-2.5 border-2 border-btn bg-btn">
-            Submit
+            </div>
+         
+          <button class ="w-full text-base rounded-xl font-bold text-white text-center py-2.5 border-2 border-btn bg-btn">
+            Register
           </button>
         </form>
+        <div class="p-4 w-full ">
+                <div class="w-full flex justify-around  mb-5">
+                    <div class="border-t-2 my-auto w-1/4"></div>
+                    <span class="font-light text-sm  ">Sudah  punya akun ?</span>
+                    <div class=" border-t-2 my-auto w-1/4 "></div>
+                </div>
+              <Link href={'/login'}>
+                <button
+                    class="w-full text-base rounded-xl font-bold  text-center py-2.5 border-btn border-2 text-color-title ">Login</button>
+
+              </Link>
+              
+            </div>
       </div>
+      </Layout>
     </>
   );
 }

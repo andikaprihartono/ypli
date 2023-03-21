@@ -1,31 +1,36 @@
 import React from "react";
 import Link from "next/link";
-import LogoPic from "../../public/components/logo.png";
+import LogoPic from "../public/components/logo.png";
 import Image from 'next/image';
 
-export default function formLogin(){
+import Layout from '../widget/layout';
+
+export default function login(){
     return(
         <>
-        
-        <div class="w-full flex flex-col p-4 items-center justify-center">
+        <Layout >
+ 
+            <div class="w-full flex flex-col  items-center justify-center">
                         <Image src={LogoPic} alt="Logo Pic" />
-                        <p class="font-bold text-4xl text-color-title text-center">
+                        <p class="font-bold text-4xl mt-5 text-color-title text-center">
                           Hi, Welcome back
                         </p>
-                        <p class="font-normal text-base">
+                        <p class="font-normal text-base mt-2">
                           Login with your account
                         </p>
                       </div>
+
+                      
              <div class="p-4 w-full  ">
                 <form class="flex flex-col">
-                    <div class="mb-4">
-                        <label class="font-bold text-base mb-2" for="">Email</label>
-                        <input className="w-full rounded-3xl border py-4 px-6 " placeholder="yourmail@mail.com" />
+                    <div class="mb-5">
+                        <label class="font-bold text-base mb-3" for="">Email</label>
+                        <input className="w-full rounded-xl border py-4 px-6 " placeholder="yourmail@mail.com" />
                     </div>
-                    <div>
-                        <label class="font-bold text-base mb-5" for="">Password</label>
+                    <div class="mb-5">
+                        <label class="font-bold text-base mb-3" for="">Password</label>
                         <div class="relative">
-                        <input className=" w-full rounded-3xl border py-4 px-6 mb-2" placeholder="Password" />
+                        <input className=" w-full rounded-xl border py-4 px-6 mb-2" placeholder="Password" />
                             <div class="absolute inset-y-0 right-0 pr-3 flex items-center   ">
                                 <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -62,7 +67,7 @@ export default function formLogin(){
 
                         </div>
                         <div>
-                            <a href="" class="decoration-dashed underline  text-color-title">Forgot Password?</a>
+                        <Link href="/forgot-password" class="decoration-dashed underline  text-color-title">Forgot Password? </Link>
                         </div>
                     </div>
 
@@ -76,13 +81,14 @@ export default function formLogin(){
                     <span class="font-light text-sm  ">Belum punya akun ?</span>
                     <div class=" border-t-2 my-auto w-1/4 "></div>
                 </div>
-<Link href="/login/register"> 
+<Link href="/register"> 
 
                 <button class="w-full text-base rounded-xl font-bold  text-center py-2.5 border-btn border-2 text-color-title ">Register</button>
 </Link>
 
                 </div>
             </div>
+            </Layout>
         </>
     )
 }
